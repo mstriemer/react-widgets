@@ -1,0 +1,31 @@
+.CentredInput {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CentredInput-label {
+  display: inline;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.CentredInput-input {
+  border: none;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.CentredInput-input:focus {
+  text-align: left;
+}
+
+.CentredInput-input:not(:placeholder-shown) {
+  text-align: center;
+}
