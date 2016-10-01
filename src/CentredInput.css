@@ -1,15 +1,29 @@
 .CentredInput {
   background-color: #ccc;
-  display: flex;
-  justify-content: space-around;
+  height: 32px;
+  position: relative;
 }
 
 .CentredInput-label {
+  color: #999;
   display: inline;
   font-family: sans-serif;
   font-size: 24px;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+.CentredInput-label:before {
+  background: url('./magnifying-glass.svg') no-repeat;
+  /* background: pink; */
+  color: white;
+  content: '';
+  display: block;
+  left: -32px;
+  height: 32px;
+  width: 32px;
+  position: absolute;
 }
 
 .CentredInput-input {
@@ -17,11 +31,17 @@
   border: none;
   font-family: sans-serif;
   font-size: 24px;
+  left: 0;
   margin: 0;
   outline: none;
   padding: 0;
+  position: absolute;
   text-align: center;
   width: 100%;
+}
+
+.CentredInput-input::placeholder {
+  color: transparent;
 }
 
 .CentredInput-input:focus {

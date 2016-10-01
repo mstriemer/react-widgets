@@ -2,32 +2,38 @@ import React from 'react';
 import './CentredInput.css';
 
 class CentredInput extends React.Component {
-  componentDidMount() {
-    const label = document.createElement('label');
-    label.classList.add('CentredInput-label');
-    label.textContent = this.props.placeholder;
-    document.body.appendChild(label);
-    const { width } = label.getBoundingClientRect();
-    document.body.removeChild(label);
-    this.input.dataset.width = `${width}px`;
+  hidePlaceholder() {
+    this.label.style.display = 'none';
+  }
+
+  showPlaceholder() {
+    this.label.style.display = '';
   }
 
   setWidth = () => {
     if (this.input.value) {
       this.clearWidth();
+      this.hidePlaceholder();
     } else {
-      this.input.style.width = this.input.dataset.width;
+      this.showPlaceholder();
+      const { left, x, width } = this.label.getBoundingClientRect();
+      this.input.style.width = `${width}px`;
+      this.input.style.left = `${x || left}px`;
     }
   }
 
   clearWidth = () => {
     this.input.style.width = '';
+    this.input.style.left = '';
   }
 
   render() {
     const { placeholder } = this.props;
     return (
       <div className="CentredInput">
+        <label className="CentredInput-label" ref={(el) => { this.label = el; }}>
+          {placeholder}
+        </label>
         <input
           className="CentredInput-input" placeholder={placeholder}
           onInput={this.setWidth} onFocus={this.setWidth}
