@@ -10,21 +10,19 @@ class CentredInput extends React.Component {
     this.label.style.display = '';
   }
 
-  setWidth = () => {
+  setInputPosition = () => {
     if (this.input.value) {
-      this.clearWidth();
+      this.resetInputPosition();
       this.hidePlaceholder();
     } else {
       this.showPlaceholder();
-      const { left, x, width } = this.label.getBoundingClientRect();
-      this.input.style.width = `${width}px`;
-      this.input.style.left = `${x || left}px`;
+      const { left, x } = this.label.getBoundingClientRect();
+      this.input.style.paddingLeft = `${x || left}px`;
     }
   }
 
-  clearWidth = () => {
-    this.input.style.width = '';
-    this.input.style.left = '';
+  resetInputPosition = () => {
+    this.input.style.paddingLeft = '';
   }
 
   render() {
@@ -36,8 +34,8 @@ class CentredInput extends React.Component {
         </label>
         <input
           className="CentredInput-input" placeholder={placeholder}
-          onInput={this.setWidth} onFocus={this.setWidth}
-          onBlur={this.clearWidth} ref={(el) => { this.input = el; }} />
+          onInput={this.setInputPosition} onFocus={this.setInputPosition}
+          onBlur={this.resetInputPosition} ref={(el) => { this.input = el; }} />
       </div>
     );
   }

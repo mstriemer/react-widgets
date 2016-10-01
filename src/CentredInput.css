@@ -29,6 +29,7 @@
 .CentredInput-input {
   background: transparent;
   border: none;
+  box-sizing: border-box;
   font-family: sans-serif;
   font-size: 24px;
   left: 0;
