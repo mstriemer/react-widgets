@@ -53,3 +53,23 @@
   top: 0;
   width: 26px;
 }
+
+.App-section {
+  background: limegreen;
+  width: 350px;
+}
+
+.App-section .CentredInput {
+  background: orange;
+}
+
+.App-section .CentredInput,
+.App-section .CentredInput-label,
+.App-section .CentredInput-input {
+  height: 20px;
+  line-height: 20px;
+}
+
+.App-section .CentredInput-label {
+  color: white;
+}
