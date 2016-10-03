@@ -18,9 +18,10 @@ class CentredInput extends React.Component {
       this.hidePlaceholder();
     } else {
       this.showPlaceholder();
+      const offsetLeft = this.label.parentElement.getBoundingClientRect().left;
       const { left } = this.label.getBoundingClientRect();
       const paddingLeft = parseFloat(getComputedStyle(this.label).paddingLeft);
-      this.input.style.paddingLeft = `${left + paddingLeft}px`;
+      this.input.style.paddingLeft = `${left + paddingLeft - offsetLeft}px`;
     }
   }
 

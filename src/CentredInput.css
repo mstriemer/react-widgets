@@ -1,3 +1,7 @@
+.CentredInput {
+  text-align: center;
+}
+
 .CentredInput,
 .CentredInput-label {
   position: relative;
