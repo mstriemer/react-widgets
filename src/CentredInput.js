@@ -16,8 +16,9 @@ class CentredInput extends React.Component {
       this.hidePlaceholder();
     } else {
       this.showPlaceholder();
-      const { left, x } = this.label.getBoundingClientRect();
-      this.input.style.paddingLeft = `${x || left}px`;
+      const { left } = this.label.getBoundingClientRect();
+      const paddingLeft = parseFloat(getComputedStyle(this.label).paddingLeft);
+      this.input.style.paddingLeft = `${left + paddingLeft}px`;
     }
   }
 
@@ -26,9 +27,9 @@ class CentredInput extends React.Component {
   }
 
   render() {
-    const { placeholder } = this.props;
+    const { className, placeholder } = this.props;
     return (
-      <div className="CentredInput">
+      <div className={[className, 'CentredInput'].join(' ')}>
         <label className="CentredInput-label" ref={(el) => { this.label = el; }}>
           {placeholder}
         </label>

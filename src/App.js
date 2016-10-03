@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-bar">
-          <CentredInput placeholder="Search the site..." />
+          <CentredInput className="App-search" placeholder="Search the site..." />
         </div>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

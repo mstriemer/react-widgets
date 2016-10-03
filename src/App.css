@@ -22,3 +22,30 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.App-search {
+  background-color: lightpink;
+}
+
+
+.App-search,
+.App-search .CentredInput-label,
+.App-search .CentredInput-input {
+  font-family: sans-serif;
+  font-size: 24px;
+  height: 35px;
+  line-height: 35px;
+  margin: 0;
+  padding: 5px;
+}
+
+.App-search .CentredInput-label:before {
+  background: url('./magnifying-glass.svg') no-repeat;
+  content: '';
+  display: block;
+  left: -26px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  width: 26px;
+}
