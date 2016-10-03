@@ -1,10 +1,5 @@
-.CentredInput {
-  position: relative;
-}
-
+.CentredInput,
 .CentredInput-label {
-  color: #fff;
-  display: inline;
   position: relative;
 }
 
@@ -26,8 +21,4 @@
 
 .CentredInput-input:focus {
   text-align: left;
-}
-
-.CentredInput-input:not(:placeholder-shown) {
-  text-align: center;
 }

@@ -39,6 +39,10 @@
   padding: 5px;
 }
 
+.App-search .CentredInput-label {
+  color: #fff;
+}
+
 .App-search .CentredInput-label:before {
   background: url('./magnifying-glass.svg') no-repeat;
   content: '';

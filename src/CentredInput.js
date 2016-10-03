@@ -4,10 +4,12 @@ import './CentredInput.css';
 class CentredInput extends React.Component {
   hidePlaceholder() {
     this.label.style.display = 'none';
+    this.input.style.textAlign = 'center';
   }
 
   showPlaceholder() {
     this.label.style.display = '';
+    this.input.style.textAlign = '';
   }
 
   setInputPosition = () => {
